@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Display a Multiplication Table Up to a Range</title>
+        <script>
+            // take number input from the user
+            const num = parseInt(prompt('Enter an integer: '));
+
+            // take range input from the user
+            const range = parseInt(prompt('Enter a range: '));
+
+            //creating a multiplication table
+            for(let x = 1; x <= range; x++) {
+               const result = x * num;
+               alert(`${num} * ${x} = ${result}`);
+            }            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

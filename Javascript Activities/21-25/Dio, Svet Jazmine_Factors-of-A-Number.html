@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Find The Factors of A Number</title>
+        <script>
+            // program to find the factors of an integer
+
+           // take input
+           const num = prompt('Enter a positive number: ');
+
+           alert(`The factors of ${num} is:`);
+
+           // looping through 1 to num
+           for(let i = 1; i <= num; i++) {
+
+               // check if number is a factor
+               if(num % i == 0) {
+                   alert(i);
+               }
+           }            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

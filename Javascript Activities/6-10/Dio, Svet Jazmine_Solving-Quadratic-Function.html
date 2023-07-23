@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Solving Quadratic Function (JS)</title>
+    <script>
+        
+        // program to solve quadratic equation
+        let root1, root2;
+
+        // take input from the user
+        let num1 = prompt("Enter the first number: ");
+        let num2 = prompt("Enter the second number: ");
+        let num3 = prompt("Enter the third number: ");
+
+        // calculate discriminant
+        let discriminant = num2 * num2 - 4 * num1 * num3;
+
+        // condition for real and different roots
+        
+        if (discriminant > 0) {
+             root1 = (-num2 + Math.sqrt(discriminant)) / (2 * num1);
+             root2 = (-num2 - Math.sqrt(discriminant)) / (2 * num1);
+       
+        // result
+        alert(`The roots of quadratic equation are ${root1} and ${root2}`);
+        }
+
+        // condition for real and equal roots
+        else if (discriminant == 0) {
+             root1 = root2 = -num2 / (2 * num1);
+
+        // result
+        alert(`The roots of quadratic equation are ${root1} and ${root2}`);
+        }
+
+        // if roots are not real
+        else {
+        let realPart = (-num2 / (2 * num1)).toFixed(2);
+        let imagPart = (Math.sqrt(-discriminant) / (2 * num1)).toFixed(2);
+
+        // result
+        alert(`The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`);
+       }
+
+       </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Fibonacci Sequence Up to a Certain Number</title>
+        <script>
+            // program to generate fibonacci series up to a certain number
+
+            // take input from the user
+            const number = parseInt(prompt('Enter a positive number: '));
+            let n1 = 0, n2 = 1, nextTerm;
+
+            alert('Fibonacci Series:');
+            alert(n1); 
+            alert(n2);
+
+            nextTerm = n1 + n2;
+
+            while (nextTerm <= number) {
+                // print the next term
+                alert(nextTerm);
+
+                n1 = n2;
+                n2 = nextTerm;
+                nextTerm = n1 + n2;
+            }            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

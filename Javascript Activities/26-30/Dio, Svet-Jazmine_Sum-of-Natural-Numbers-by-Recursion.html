@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sum of Natural Numbers Using Recursion</title>
+        <script>
+            // program to find the sum of natural numbers using recursion
+
+            function sum(num) {
+                if(num > 0) {
+                    return num + sum(num - 1);
+                }
+                else {
+                    return num;
+                }
+            }
+
+            // take input from the user
+            const number = parseInt(prompt('Enter a positive integer: '));
+
+            const result = sum(number);
+
+            // display the result
+            alert(`The sum is ${result}`);        
+    </script>
+    </head>
+    <body>
+    </body>
+</html>
