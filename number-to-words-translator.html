@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Convert Numbers Into Words</title>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+        <style type="text/css">
+            
+            body {
+            background: #342D7E; 
+            padding: 0;
+            margin: 0;
+            font-family: 'Trebuchet MS';
+            color: #FFFFFF;
+            }
+            
+            .text{
+            position: relative;
+            top: 50px;
+            font-size: 80px; 
+            text-align: center;
+            }
+            
+            .text1{
+            position:relative;
+            font-style: italic;
+            font-size: 40px;
+            text-align: center;
+            top: 100px;
+            }
+            
+            .button{
+            position: relative;
+            text-align: center;
+            top: 33px;
+            padding: 12px 28px;
+            font-size: 50px;
+            border: 5px solid #FFFFFF;
+            border-radius: 12px;
+            }
+        </style>
+        <script>
+            function doConvert (){
+    let numberInput = prompt('Please enter your number/s: ');
+    let myDiv = document.querySelector('#result');
+
+    let oneToTwenty = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ',
+    'Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
+    let tenth = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
+
+    if(numberInput.toString().length > 7) return myDiv.innerHTML = 'Ops! Overlimit!' ;
+    console.log(numberInput);
+    //let num = ('0000000000'+ numberInput).slice(-10).match(/^(\d{1})(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+  let num = ('0000000'+ numberInput).slice(-7).match(/^(\d{1})(\d{1})(\d{2})(\d{1})(\d{2})$/);
+    console.log(num);
+    if(!num) return;
+
+    let outputText = num[1] != 0 ? (oneToTwenty[Number(num[1])] || `${tenth[num[1][0]]} ${oneToTwenty[num[1][1]]}` )+' Million ' : ''; 
+  
+    outputText +=num[2] != 0 ? (oneToTwenty[Number(num[2])] || `${tenth[num[2][0]]} ${oneToTwenty[num[2][1]]}` )+'Hundred ' : '';
+    outputText +=num[3] != 0 ? (oneToTwenty[Number(num[3])] || `${tenth[num[3][0]]} ${oneToTwenty[num[3][1]]}`)+'Thousand ' : '';
+    outputText +=num[4] != 0 ? (oneToTwenty[Number(num[4])] || `${tenth[num[4][0]]} ${oneToTwenty[num[4][1]]}`) +'Hundred ': ''; 
+    outputText +=num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `) : ''; 
+
+    myDiv.innerHTML = outputText;
+}   
+
+        </script>
+    </head>
+    <body>
+        <div class="text">
+            <p><b>WELCOME! THIS IS YOUR NUMBER TO WORDS TRANSLATOR!</b></p>
+        </div>
+        <div class="button">
+            <button class="btn-outline-light" onclick="doConvert()">Click to Start</button>
+        </div>
+        <div class="text1">
+            <p id="result"></p>
+        </div>
+        </body>
+</html>
